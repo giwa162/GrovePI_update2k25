@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-IFS=$'\n\t'
 
 # Script om GrovePi+ software en firmware te updaten
 # Werkt op Raspberry Pi OS / Debian 13
@@ -66,3 +64,4 @@ else
 fi
 
 echo "=== GrovePi+ Update Klaar ==="
+
