@@ -1,22 +1,10 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-IFS=$'\n\t'
-
 # Script om GrovePi+ software en firmware te updaten
 # Werkt op Raspberry Pi OS / Debian 13
 # Auteur: Rayen Jiwalal
 
 echo "=== GrovePi+ Update Start ==="
-
-# 1) Controleer of SPI en I2C zijn ingeschakeld
-echo "Controleer of SPI en I2C zijn ingeschakeld..."
-if ! grep -q "dtparam=i2c_arm=on" /boot/config.txt || ! grep -q "dtparam=spi=on" /boot/config.txt; then
-  echo "⚠️ SPI en/of I2C lijken niet ingeschakeld te zijn."
-  echo "  Voer: sudo raspi-config"
-  echo "  Ga naar: Interfaces -> Enable SPI en I2C"
-  exit 1
-fi
 
 # 2) Update / install repository
 BASE_DIR="$HOME/Dexter/GrovePi"
@@ -66,5 +54,6 @@ else
 fi
 
 echo "=== GrovePi+ Update Klaar ==="
+
 
 
